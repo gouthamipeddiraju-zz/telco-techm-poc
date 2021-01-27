@@ -1,4 +1,4 @@
-const Bar = ({ percentage }) => {
+const Bar = ({ percentage, limit }) => {
   const wrapper = {
     height: 36,
     width: "100%",
@@ -9,8 +9,8 @@ const Bar = ({ percentage }) => {
 
   const backgroundPercentage = {
     height: "100%",
-    width: `${percentage}%`,
-    backgroundColor: percentage > 100 ? "red" : "#b1d7e7",
+    width: `${(percentage / limit) * 100}%`,
+    backgroundColor: percentage > limit ? "red" : "#b1d7e7",
     borderRadius: "inherit",
     transition: "width 1s ease-in-out",
     maxWidth: "100%",
