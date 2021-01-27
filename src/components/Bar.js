@@ -6,7 +6,7 @@ const Bar = ({ percentage, limit }) => {
     backgroundColor: percentage > limit ? "red" : "#b1d7e7",
   };
   return (
-    <div className="bar-wrapper">
+    <div className="bar-wrapper" data-testid="bars">
       <span className="percentage-label">{`${percentage}%`}</span>
       <div className="background-percentage" style={backgroundPercentage}></div>
     </div>
