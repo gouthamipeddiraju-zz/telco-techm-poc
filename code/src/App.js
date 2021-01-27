@@ -4,7 +4,7 @@ import Buttons from "./components/Buttons";
 
 import "./styles/App.css";
 
-const FETCH_URL = "http://pb-api.herokuapp.com/bars";
+const FETCH_URL = "https://pb-api.herokuapp.com/bars";
 
 const App = () => {
   const [data, setData] = useState({
