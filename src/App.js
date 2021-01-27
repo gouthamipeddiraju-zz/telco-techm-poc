@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import Progressbar from "./components/Progressbar";
+import Buttons from "./components/Buttons";
 
 const FETCH_URL = "http://pb-api.herokuapp.com/bars";
 
@@ -19,7 +20,16 @@ const App = () => {
       setData({ isLoading: false, content: {}, error: true });
     }
   };
-
+  const updateProgressBars = (progressBarIndex, value) => {
+    console.log(progressBarIndex, value);
+    const { bars } = data.content;
+    bars[progressBarIndex] = bars[progressBarIndex] + value;
+    setData({
+      isLoading: false,
+      content: { ...data.content, bars: bars },
+      error: false,
+    });
+  };
   useEffect(() => {
     fetchData();
   }, []);
@@ -33,7 +43,13 @@ const App = () => {
         ) : data?.error ? (
           <p> Something went wrong.</p>
         ) : (
-          <Progressbar data={data.content} />
+          <>
+            <Progressbar data={data.content} />
+            <Buttons
+              data={data.content}
+              updateProgressBars={updateProgressBars}
+            />
+          </>
         )}
       </header>
     </div>

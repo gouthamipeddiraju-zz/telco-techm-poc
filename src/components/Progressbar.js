@@ -1,12 +1,12 @@
 import Bar from "./Bar";
 
 const Progressbar = ({ data }) => {
-  const { bars, buttons, limit } = data;
+  const { bars } = data;
   return (
     <>
       {bars.length &&
-        bars.map((bar) => {
-          return <Bar percentage={bar} />;
+        bars.map((bar, index) => {
+          return <Bar key={index} percentage={bar} />;
         })}
     </>
   );

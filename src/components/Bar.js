@@ -10,9 +10,10 @@ const Bar = ({ percentage }) => {
   const backgroundPercentage = {
     height: "100%",
     width: `${percentage}%`,
-    backgroundColor: "#b1d7e7",
+    backgroundColor: percentage > 100 ? "red" : "#b1d7e7",
     borderRadius: "inherit",
     transition: "width 1s ease-in-out",
+    maxWidth: "100%",
   };
 
   const labelText = {
