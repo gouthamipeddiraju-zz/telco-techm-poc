@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/Buttons.css";
 
 const Buttons = ({ data, updateProgressBars }) => {
   const [selectedProgressBar, setProgressBar] = useState(0);
