@@ -1,7 +1,15 @@
+import Bar from "./Bar";
+
 const Progressbar = ({ data }) => {
   const { bars, buttons, limit } = data;
-  console.log(bars);
-  return <p>hello</p>;
+  return (
+    <>
+      {bars.length &&
+        bars.map((bar) => {
+          return <Bar percentage={bar} />;
+        })}
+    </>
+  );
 };
 
 export default Progressbar;
